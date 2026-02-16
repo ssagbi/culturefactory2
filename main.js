@@ -1,11 +1,10 @@
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function () {
+            mainNav.classList.toggle('active');
         });
-    });
+    }
 });
-
-console.log("main.js loaded");

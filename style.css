@@ -21,6 +21,9 @@ body {
     color: var(--text-color);
     background: var(--secondary-color);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility; /* 가독성 최적화 */
+    letter-spacing: 0.2px; /* 자간 조절 */
+    word-break: keep-all; /* 단어 단위 줄바꿈 */
     scroll-behavior: smooth;
 }
 
@@ -52,6 +55,7 @@ body {
 .main-header .logo {
     font-size: 1.8rem;
     font-weight: bold;
+    z-index: 1001; /* 로고가 메뉴 위에 오도록 설정 */
 }
 
 .main-header .logo a {
@@ -78,6 +82,23 @@ body {
 .main-nav ul li a:hover {
     color: var(--accent-color);
 }
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none; /* 모바일에서만 보이도록 설정 */
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
 
 /* Hero Section */
 .hero-section {
@@ -137,7 +158,6 @@ body {
 /* Section Styling */
 section {
     padding: 60px 0;
-    margin-bottom: 20px;
 }
 
 section h2 {
@@ -199,7 +219,7 @@ section h2 {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.8; /* 긴 글의 가독성을 위해 행간 조절 */
 }
 
 /* Contact Section */
@@ -246,13 +266,33 @@ section h2 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .main-header .container {
-        flex-direction: column;
-        text-align: center;
+    .container {
+        width: 95%;
     }
 
-    .main-header .logo {
-        margin-bottom: 15px;
+    .main-header .container {
+        padding: 0 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* 처음에는 화면 밖에 위치 */
+        width: 250px;
+        height: 100%;
+        background: white;
+        padding-top: 60px;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    }
+    
+    .main-nav.active {
+        right: 0; /* active 클래스가 추가되면 오른쪽에서 나타남 */
     }
 
     .main-nav ul {
@@ -261,15 +301,22 @@ section h2 {
     }
 
     .main-nav ul li {
-        margin: 0 0 10px 0;
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .main-nav ul li a {
+        display: block;
+        padding: 10px 0;
     }
 
     .hero-content h2 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .hero-content p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .portfolio-grid {
@@ -277,11 +324,15 @@ section h2 {
     }
 
     section {
-        padding: 40px 0;
+        padding: 40px 15px;
     }
 
     section h2 {
         font-size: 2rem;
+    }
+    
+    .about-section {
+        padding: 30px 15px;
     }
 }
 
