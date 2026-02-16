@@ -10,7 +10,7 @@
 <body>
     <header class="main-header">
         <div class="container">
-            <h1 class="logo"><a href="#">문화공장</a></h1>
+            <h1 class="logo"><a href="#"><img src="logo.jpg" alt="문화공장 로고" class="header-logo-img"></a></h1>
             <nav class="main-nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -39,22 +39,7 @@
         <section id="portfolio" class="portfolio-section container">
             <h2>Our Works</h2>
             <div class="portfolio-grid">
-                <!-- 포트폴리오 아이템들이 여기에 동적으로 로드되거나 정적으로 추가됩니다. -->
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300?text=Project+1" alt="Project 1">
-                    <h3>프로젝트명 1</h3>
-                    <p>간단한 설명</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300?text=Project+2" alt="Project 2">
-                    <h3>프로젝트명 2</h3>
-                    <p>간단한 설명</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300?text=Project+3" alt="Project 3">
-                    <h3>프로젝트명 3</h3>
-                    <p>간단한 설명</p>
-                </div>
+                <!-- 포트폴리오 아이템들이 여기에 동적으로 로드됩니다. -->
             </div>
         </section>
 
@@ -93,6 +78,21 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal Structure -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-project-title"></h2>
+            <div class="modal-images">
+                <img id="modal-main-image" src="" alt="Main project image">
+                <div id="modal-thumbnail-container" class="thumbnail-container">
+                    <!-- Thumbnails will be dynamically inserted here -->
+                </div>
+            </div>
+            <p id="modal-project-description"></p>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>

@@ -7,8 +7,8 @@
 
 :root {
     --primary-color: #333;
-    --secondary-color: #f4f4f4;
-    --accent-color: #a07d6f; /* Example: Earthy tone */
+    --secondary-color: #fff;
+    --accent-color: #D9632B; /* New accent color: Orange from logo */
     --text-color: #333;
     --light-text-color: #fff;
     --font-family-sans: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Dotum', sans-serif;
@@ -39,10 +39,7 @@ body {
     background: var(--light-text-color);
     color: var(--text-color);
     padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    border-bottom: 1px solid #eee; /* Lighter border */
 }
 
 .main-header .container {
@@ -102,7 +99,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: url('https://via.placeholder.com/1500x800?text=Beautiful+Interior') no-repeat center center/cover;
+    background: url('../images/0014.jpg') no-repeat center center/cover;
     color: var(--light-text-color);
     height: 80vh;
     display: flex;
@@ -152,7 +149,7 @@ body {
 }
 
 .btn:hover {
-    background: #8e6c60; /* Slightly darker accent */
+    background: #C05625; /* Slightly darker orange */
 }
 
 /* Section Styling */
@@ -179,12 +176,13 @@ section h2 {
     background: var(--light-text-color);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-item img {
@@ -209,14 +207,13 @@ section h2 {
 /* About Section */
 .about-section {
     text-align: center;
-    background: var(--light-text-color);
+    background: var(--secondary-color); /* Match body background */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     padding: 40px;
 }
 
 .about-section p {
-    max-width: 800px;
+    max-width: 100%; /* Allow it to take full container width */
     margin: 0 auto;
     font-size: 1.1rem;
     line-height: 1.8; /* 긴 글의 가독성을 위해 행간 조절 */
@@ -336,3 +333,117 @@ section h2 {
     }
 }
 
+/* --- Modal Styles --- */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 95%; /* Could be more or less, depending on screen size */
+    max-width: 1000px; /* Increased max-width */
+    border-radius: 8px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-project-title {
+    font-family: var(--font-family-serif);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#modal-main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.thumbnail {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: 4px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.thumbnail:hover {
+    opacity: 1;
+}
+
+.thumbnail.active {
+    opacity: 1;
+    border-color: var(--accent-color);
+}
+
+#modal-project-description {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+        margin: 10% auto;
+    }
+
+    #modal-project-title {
+        font-size: 1.5rem;
+    }
+
+    .thumbnail {
+        width: 80px;
+        height: 60px;
+    }
+}
+.header-logo-img {
+    max-height: 40px; /* Adjust as needed */
+    width: auto;
+    vertical-align: middle;
+}
