@@ -10,8 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Portfolio and Modal Logic ---
 
-    // 1. Project Data
-    // You can easily update your projects here.
+    // 1. Project Data (Existing)
     const projects = [
         {
             id: 1,
@@ -295,14 +294,159 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
+    // 1. Projects Data (3D Images) - Placeholder
+    const projects3D = [
+        {
+            id: 101,
+            name: "공동관",
+            description: "공동관 3D 모델링 프로젝트입니다.",
+            mainImage: "images/공동관_1.jpg",
+            completionPhotos: [
+                "images/공동관_1.jpg",
+                "images/공동관_2.jpg",
+                "images/공동관_3.jpg"
+            ]
+        },
+        {
+            id: 102,
+            name: "문화관",
+            description: "문화관 3D 모델링 프로젝트입니다.",
+            mainImage: "images/문화관_1.jpg",
+            completionPhotos: [
+                "images/문화관_1.jpg",
+                "images/문화관_2.jpg",
+                "images/문화관_3.jpg"
+            ]
+        },
+        {
+            id: 103,
+            name: "미래관",
+            description: "미래관 3D 모델링 프로젝트입니다.",
+            mainImage: "images/미래관_1.png",
+            completionPhotos: [
+                "images/미래관_1.png",
+                "images/미래관_2.png",
+                "images/미래관_3.png",
+                "images/미래관_4.png"
+            ]
+        },
+        {
+            id: 104,
+            name: "봄날스테이",
+            description: "봄날스테이 3D 모델링 프로젝트입니다.",
+            mainImage: "images/봄날스테이_1.png",
+            completionPhotos: [
+                "images/봄날스테이_1.png",
+                "images/봄날스테이_2.png",
+                "images/봄날스테이_3.png",
+                "images/봄날스테이_4.png",
+                "images/봄날스테이_5.png",
+                "images/봄날스테이_6.png",
+                "images/봄날스테이_7.png",
+                "images/봄날스테이_8.png",
+                "images/봄날스테이_9.png",
+                "images/봄날스테이_10.png",
+                "images/봄날스테이_11.png",
+                "images/봄날스테이_12.png"
+            ]
+        },
+        {
+            id: 105,
+            name: "비건 카페 디자인",
+            description: "비건 카페 3D 디자인 프로젝트입니다.",
+            mainImage: "images/비건_카페_디자인_1.jpg",
+            completionPhotos: [
+                "images/비건_카페_디자인_1.jpg",
+                "images/비건_카페_디자인_2.jpg",
+                "images/비건_카페_디자인_3.jpg"
+            ]
+        },
+        {
+            id: 106,
+            name: "섬놀이터",
+            description: "섬놀이터 3D 모델링 프로젝트입니다.",
+            mainImage: "images/섬놀이터_1.jpg",
+            completionPhotos: [
+                "images/섬놀이터_1.jpg",
+                "images/섬놀이터_2.jpg",
+                "images/섬놀이터_3.jpg"
+            ]
+        },
+        {
+            id: 107,
+            name: "섬식당",
+            description: "섬식당 3D 모델링 프로젝트입니다.",
+            mainImage: "images/섬식당_1.jpg",
+            completionPhotos: [
+                "images/섬식당_1.jpg",
+                "images/섬식당_2.jpg",
+                "images/섬식당_3.jpg"
+            ]
+        },
+        {
+            id: 108,
+            name: "안산피자집",
+            description: "안산피자집 3D 모델링 프로젝트입니다.",
+            mainImage: "images/안산피자집_1.jpg",
+            completionPhotos: [
+                "images/안산피자집_1.jpg",
+                "images/안산피자집_2.jpg",
+                "images/안산피자집_3.jpg"
+            ]
+        },
+        {
+            id: 109,
+            name: "위저드 클럽 보드카페",
+            description: "위저드 클럽 보드카페 3D 모델링 프로젝트입니다.",
+            mainImage: "images/위저드_클럽_보드카페_1.png",
+            completionPhotos: [
+                "images/위저드_클럽_보드카페_1.png",
+                "images/위저드_클럽_보드카페_2.png",
+                "images/위저드_클럽_보드카페_3.png",
+                "images/위저드_클럽_보드카페_4.png",
+                "images/위저드_클럽_보드카페_5.png",
+                "images/위저드_클럽_보드카페_6.png",
+                "images/위저드_클럽_보드카페_7.png",
+                "images/위저드_클럽_보드카페_8.png",
+                "images/위저드_클럽_보드카페_9.png",
+                "images/위저드_클럽_보드카페_10.png",
+                "images/위저드_클럽_보드카페_11.png",
+                "images/위저드_클럽_보드카페_12.png",
+                "images/위저드_클럽_보드카페_13.png",
+                "images/위저드_클럽_보드카페_14.png",
+                "images/위저드_클럽_보드카페_15.png",
+                "images/위저드_클럽_보드카페_16.png",
+                "images/위저드_클럽_보드카페_17.png",
+                "images/위저드_클럽_보드카페_18.png",
+                "images/위저드_클럽_보드카페_19.png",
+                "images/위저드_클럽_보드카페_20.png"
+            ]
+        },
+        {
+            id: 110,
+            name: "청담 고깃집",
+            description: "청담 고깃집 3D 모델링 프로젝트입니다.",
+            mainImage: "images/청담_고깃집_1.png",
+            completionPhotos: [
+                "images/청담_고깃집_1.png",
+                "images/청담_고깃집_2.png",
+                "images/청담_고깃집_3.png",
+                "images/청담_고깃집_4.png",
+                "images/청담_고깃집_5.png"
+            ]
+        }
+    ];
+
+
     const portfolioGrid = document.querySelector('.portfolio-grid');
+    const portfolio3dGrid = document.querySelector('.portfolio-3d-grid'); // New 3D grid selector
     const modal = document.getElementById('project-modal');
 
-    // 2. Render Portfolio Grid
-    function renderPortfolioGrid() {
-        if (!portfolioGrid) return;
-        portfolioGrid.innerHTML = ''; // Clear existing items
-        projects.forEach(project => {
+    // 2. Render Portfolio Grid - Modified to handle different project lists and grids
+    function renderPortfolioGrid(targetGrid, projectList) {
+        if (!targetGrid) return;
+        targetGrid.innerHTML = ''; // Clear existing items
+        projectList.forEach(project => {
             const item = document.createElement('div');
             item.className = 'portfolio-item';
             item.dataset.projectId = project.id;
@@ -311,11 +455,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h3>${project.name}</h3>
                 <p>${project.description.substring(0, 40)}...</p>
             `;
-            portfolioGrid.appendChild(item);
+            targetGrid.appendChild(item);
         });
     }
 
-    // 3. Modal Handling
+    // 3. Modal Handling - Modified to search both project lists
     if (modal) {
         const modalTitle = document.getElementById('modal-project-title');
         const modalMainImage = document.getElementById('modal-main-image');
@@ -324,7 +468,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const closeButton = document.querySelector('.close-button');
 
         function openModal(projectId) {
-            const project = projects.find(p => p.id == projectId);
+            let project = projects.find(p => p.id == projectId);
+            if (!project) { // If not found in main projects, search in 3D projects
+                project = projects3D.find(p => p.id == projectId);
+            }
+
             if (!project) return;
 
             modalTitle.textContent = project.name;
@@ -351,9 +499,19 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = 'none';
         }
 
-        // Event Listeners
+        // Event Listeners for main portfolio
         if (portfolioGrid) {
             portfolioGrid.addEventListener('click', function(e) {
+                const item = e.target.closest('.portfolio-item');
+                if (item && item.dataset.projectId) {
+                    openModal(item.dataset.projectId);
+                }
+            });
+        }
+        
+        // Event Listeners for 3D portfolio
+        if (portfolio3dGrid) {
+            portfolio3dGrid.addEventListener('click', function(e) {
                 const item = e.target.closest('.portfolio-item');
                 if (item && item.dataset.projectId) {
                     openModal(item.dataset.projectId);
@@ -387,8 +545,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
-    // Initial Render
-    renderPortfolioGrid();
+    // Initial Render - Modified to render both grids
+    renderPortfolioGrid(portfolioGrid, projects);
+    renderPortfolioGrid(portfolio3dGrid, projects3D);
+
 
     // --- Contact Form Logic ---
     const contactForm = document.getElementById('contact-form');

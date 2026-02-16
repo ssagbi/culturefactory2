@@ -93,5 +93,18 @@
 *   **JavaScript 변경**: `main.js`에 `contact-form`의 `submit` 이벤트 리스너를 추가했습니다. 폼 데이터를 수집하여 `fetch` API를 통해 사용자가 제공한 Google Apps Script 웹 앱 URL(`https://script.google.com/macros/s/AKfycbz0mMxCMjuF5l_HTqIoChF55oHtXEoLzX5Z5kHIwOsWk-5AI997pdTlkjXhHSoQyv/exec`)로 전송합니다. 성공 시 "문의가 접수되었습니다. 유대리가 곧 연락드릴게요!", 실패 시 "문의 접수에 실패했습니다. 다시 시도해 주세요." 메시지를 표시하도록 구현했습니다. `mode: 'no-cors'`를 사용하여 Apps Script의 CORS 제한을 우회했습니다.
 *   **CSS 스타일링**: `style.css`에 `.contact-form` 및 그 내부 `input`, `button`, `.form-message` 요소에 대한 스타일을 추가했습니다. 인더스트리얼 느낌의 무채색 톤, 반투명한 흰색 배경, 얇고 깔끔한 테두리 등 요청된 디자인 가이드를 반영했습니다.
 
+## 3.6 3D 이미지 작업 섹션 추가
+*   **요청**: '3D image' 제목으로 새로운 'Our Works' 공간을 추가.
+*   **HTML 변경**: `index.html`에 내비게이션 링크 `#portfolio-3d`를 추가하고, 기존 포트폴리오 섹션 뒤에 `<section id="portfolio-3d" class="portfolio-section container">`를 추가했습니다. 이 섹션은 `<h2>3D Image Works</h2>`와 `portfolio-3d-grid`를 포함합니다.
+*   **JavaScript 변경**: `main.js`에 사용자가 제공한 3D 모델링 프로젝트(`공동관`, `문화관`, `미래관`, `봄날스테이`, `비건 카페 디자인`, `섬놀이터`, `섬식당`, `안산피자집`, `위저드 클럽 보드카페`, `청담 고깃집`)에 대한 새로운 `projects3D` 배열을 추가했습니다. 기존 `images/` 폴더의 이미지들을 플레이스홀더로 사용하여 `mainImage` 및 `completionPhotos`를 설정했습니다. `renderPortfolioGrid` 함수를 수정하여 `targetGrid`와 `projectList`를 인자로 받아 유연하게 포트폴리오를 렌더링하도록 변경했고, `openModal` 함수도 `projects`와 `projects3D` 배열 모두에서 프로젝트를 검색하도록 업데이트했습니다. `DOMContentLoaded` 시점에 두 그리드 모두 렌더링하도록 호출을 추가했습니다.
+
+### 3.6.1 3D 이미지 파일명 및 main.js 경로 업데이트
+
+*   **문제**: `projects3D` 배열 내 이미지 파일명들이 프로젝트 이름과 일치하지 않아 관리의 어려움이 있었습니다.
+*   **해결**: `images` 폴더 내의 3D 이미지 파일들을 각 프로젝트의 이름과 순번(`프로젝트이름_1.jpg`, `프로젝트이름_2.jpg` 등)에 맞춰 변경했습니다.
+    *   예시: `images/0001.jpg` -> `images/공동관_1.jpg`
+    *   변경된 프로젝트 목록: 공동관, 문화관, 미래관, 봄날스테이, 비건 카페 디자인, 섬놀이터, 섬식당, 안산피자집, 위저드 클럽 보드카페, 청담 고깃집.
+*   **JavaScript 업데이트**: `main.js` 파일 내 `projects3D` 배열의 `mainImage` 및 `completionPhotos` 경로를 변경된 파일명으로 모두 업데이트했습니다.
+
 사용자의 요청은 "문화공장이란 인테리어 포트폴리오 사이트를 만들려고해 기본 틀 잡아" 이었으며, 이 요청은 성공적으로 완료되었습니다.
 다음 단계는 사용자의 추가 요청을 기다리는 것입니다.
