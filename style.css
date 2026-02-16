@@ -116,7 +116,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+    background: rgba(0, 0, 0, 0.7); /* Overlay for readability */
 }
 
 .hero-content {
@@ -130,11 +130,13 @@ body {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     font-family: var(--font-family-serif);
+    color: #FFFFFF !important; /* 명시적으로 흰색으로 설정 */
 }
 
 .hero-content p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
+    color: #FFFFFF !important; /* 명시적으로 흰색으로 설정 */
 }
 
 .btn {
