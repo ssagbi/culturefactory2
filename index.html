@@ -30,7 +30,7 @@
     <main>
         <section id="home" class="hero-section">
             <div class="hero-content">
-                <h2>당신의 비즈니스가 문화가 되는 곳, 문화공장이 함께합니다</h2>
+                <h2>당신의 비즈니스가 문화가 되는곳<br>문화공장이 함께합니다</h2>
                 <p>문화공장은 생활에 가치를 더하는 아름다운 인테리어를 만듭니다.</p>
                 <a href="#portfolio" class="btn">프로젝트 보기</a>
             </div>
@@ -45,7 +45,7 @@
 
         <section id="about" class="about-section container">
             <h2>About Us</h2>
-            <p>[공간 그 이상의 가치, 문화를 만드는 공장]
+            <p><span class="highlight-phrase">[공간 그 이상의 가치, 문화를 만드는 공장]</span>
 
 단순히 벽을 세우고 페인트를 칠하는 것이 인테리어의 전부가 아닙니다.
 문화공장은 상업 공간의 본질인 '사람'과 '수익', 그리고 그곳만이 가질 수 있는 '문화'에 집중합니다.
@@ -62,11 +62,20 @@
             <h2>Contact Us</h2>
             <p>프로젝트 문의 또는 상담을 원하시면 언제든지 연락 주세요.</p>
             <address>
-                <p>Email: info@culturefactory.com</p>
+                <p>Email: culturefactory2024@naver.com</p>
                 <p>Phone: 010-2726-7273</p>
                 <p>Address: 서울 서초구 마방로10길 18-16 1동 4층 242997</p>
             </address>
             <!-- 문의 양식은 추후 추가 -->
+            <form id="contact-form" class="contact-form">
+              <input type="text" name="name" placeholder="성함" required>
+              <input type="tel" name="phone" placeholder="연락처" required>
+              <input type="text" name="duration" placeholder="희망 공사 기간">
+              <input type="number" name="budget" placeholder="예상 예산(만원)">
+              <input type="text" name="address" placeholder="공사 주소">
+              <button type="submit" class="btn">견적 문의하기</button>
+            </form>
+            <div id="form-message" class="form-message"></div>
         </section>
     </main>
 

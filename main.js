@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 4,
             name: "대치성공스토리",
             description: "대치동 성공스토리 학원 인테리어 프로젝트입니다. 학습 효율을 높이는 공간을 구현했습니다.",
-            mainImage: "images/대치성공스토리 (1).jpg",
+            mainImage: "images/대치성공스토리 (4).jpg",
             completionPhotos: [
                 "images/대치성공스토리 (1).jpg",
                 "images/대치성공스토리 (10).jpg",
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 7,
             name: "이디야카페 세종점",
             description: "이디야카페 세종점 인테리어 프로젝트입니다. 고객들이 편안하게 즐길 수 있는 카페 공간을 조성했습니다.",
-            mainImage: "images/이디야카페 세종점 (2).jpg",
+            mainImage: "images/이디야카페 세종점 (5).jpg", // Changed
             completionPhotos: [
                 "images/이디야카페 세종점 (1).jpg",
                 "images/이디야카페 세종점 (2).jpg",
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 10,
             name: "옥이네",
             description: "옥이네 음식점 인테리어 프로젝트입니다. 정겹고 편안한 한식당의 분위기를 연출했습니다.",
-            mainImage: "images/옥이네  (1).jpg",
+            mainImage: "images/옥이네  (4).jpg", // Changed
             completionPhotos: [
                 "images/옥이네  (1).jpg",
                 "images/옥이네  (10).jpg",
@@ -253,6 +253,44 @@ document.addEventListener('DOMContentLoaded', function () {
                 "images/카페조기나루 (4).JPG",
                 "images/카페조기나루 (5).JPG",
                 "images/카페조기나루 (6).JPG"
+            ]
+        },
+        {
+            id: 15,
+            name: "ABC-MART 울산무거점",
+            description: "ABC-MART 울산무거점 인테리어 프로젝트입니다. 신발 쇼핑에 최적화된 모던하고 깔끔한 공간을 구현했습니다.",
+            mainImage: "images/ABC-MART 울산무거점 (1).jpg",
+            completionPhotos: [
+                "images/ABC-MART 울산무거점 (1).jpg",
+                "images/ABC-MART 울산무거점 (10).jpg",
+                "images/ABC-MART 울산무거점 (11).jpg",
+                "images/ABC-MART 울산무거점 (12).jpg",
+                "images/ABC-MART 울산무거점 (13).jpg",
+                "images/ABC-MART 울산무거점 (2).jpg",
+                "images/ABC-MART 울산무거점 (3).jpg",
+                "images/ABC-MART 울산무거점 (4).jpg",
+                "images/ABC-MART 울산무거점 (5).jpg",
+                "images/ABC-MART 울산무거점 (6).jpg",
+                "images/ABC-MART 울산무거점 (7).jpg",
+                "images/ABC-MART 울산무거점 (8).jpg",
+                "images/ABC-MART 울산무거점 (9).jpg"
+            ]
+        },
+        {
+            id: 16,
+            name: "ABC-MART 천안신부점",
+            description: "ABC-MART 천안신부점 인테리어 프로젝트입니다. 트렌디한 디자인과 쾌적한 쇼핑 환경을 제공합니다.",
+            mainImage: "images/ABC-MART 천안신부점 (1).jpg",
+            completionPhotos: [
+                "images/ABC-MART 천안신부점 (1).jpg",
+                "images/ABC-MART 천안신부점 (2).jpg",
+                "images/ABC-MART 천안신부점 (3).jpg",
+                "images/ABC-MART 천안신부점 (4).jpg",
+                "images/ABC-MART 천안신부점 (5).jpg",
+                "images/ABC-MART 천안신부점 (6).jpg",
+                "images/ABC-MART 천안신부점 (7).jpg",
+                "images/ABC-MART 천안신부점 (8).jpg",
+                "images/ABC-MART 천안신부점 (9).jpg"
             ]
         }
     ];
@@ -351,4 +389,45 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Initial Render
     renderPortfolioGrid();
+
+    // --- Contact Form Logic ---
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz0mMxCMjuF5l_HTqIoChKFx55oHtXEoLzX5Z5kHIwOsWk-5AI997pdTlkjXhHSoQyv/exec';
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            formMessage.textContent = '문의를 접수 중입니다...';
+            formMessage.style.color = '#FFA500'; // Orange for pending
+
+            const formData = new FormData(contactForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Required for Google Apps Script
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(data).toString()
+            })
+            .then(response => {
+                // Because of 'no-cors', we can't directly read the response.
+                // Assume success if no network error.
+                formMessage.textContent = '문의가 접수되었습니다. 유대리가 곧 연락드릴게요!';
+                formMessage.style.color = '#28a745'; // Green for success
+                contactForm.reset(); // Clear the form
+            })
+            .catch(error => {
+                formMessage.textContent = '문의 접수에 실패했습니다. 다시 시도해 주세요.';
+                formMessage.style.color = '#dc3545'; // Red for error
+                console.error('Error submitting form:', error);
+            });
+        });
+    }
 });
