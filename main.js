@@ -300,22 +300,30 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 101,
             name: "공동관",
             description: "공동관 3D 모델링 프로젝트입니다.",
-            mainImage: "images/공동관_1.jpg",
+            mainImage: "images/공동관-라운지01.jpg",
             completionPhotos: [
-                "images/공동관_1.jpg",
-                "images/공동관_2.jpg",
-                "images/공동관_3.jpg"
+                "images/공동관 -vip.jpg",
+                "images/공동관 -무대.jpg",
+                "images/공동관 -입구02.jpg",
+                "images/공동관 -컨테이너.jpg",
+                "images/공동관-라운지01.jpg",
+                "images/공동관-라운지02.jpg",
+                "images/공동관-스튜디오.jpg"
             ]
         },
         {
             id: 102,
             name: "문화관",
             description: "문화관 3D 모델링 프로젝트입니다.",
-            mainImage: "images/문화관_1.jpg",
+            mainImage: "images/문화관-무대.jpg",
             completionPhotos: [
-                "images/문화관_1.jpg",
-                "images/문화관_2.jpg",
-                "images/문화관_3.jpg"
+                "images/문화관-vr.jpg",
+                "images/문화관-그린란드.jpg",
+                "images/문화관-등대.jpg",
+                "images/문화관-무대.jpg",
+                "images/문화관-발리.jpg",
+                "images/문화관-섬.jpg",
+                "images/문화관-잔지바르.jpg"
             ]
         },
         {
@@ -354,22 +362,26 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 105,
             name: "비건 카페 디자인",
             description: "비건 카페 3D 디자인 프로젝트입니다.",
-            mainImage: "images/비건_카페_디자인_1.jpg",
+            mainImage: "images/비건_카페_디자인_1.jpeg",
             completionPhotos: [
-                "images/비건_카페_디자인_1.jpg",
-                "images/비건_카페_디자인_2.jpg",
-                "images/비건_카페_디자인_3.jpg"
+                "images/비건_카페_디자인_1.jpeg",
+                "images/비건_카페_디자인_2.jpeg",
+                "images/비건_카페_디자인_3.jpeg",
+                "images/비건_카페_디자인_4.jpeg"
             ]
         },
         {
             id: 106,
             name: "섬놀이터",
             description: "섬놀이터 3D 모델링 프로젝트입니다.",
-            mainImage: "images/섬놀이터_1.jpg",
+            mainImage: "images/섬놀이터 - 열매.jpg",
             completionPhotos: [
-                "images/섬놀이터_1.jpg",
-                "images/섬놀이터_2.jpg",
-                "images/섬놀이터_3.jpg"
+                "images/섬놀이터 - 열매.jpg",
+                "images/섬놀이터 -거울.jpg",
+                "images/섬놀이터 -영상.jpg",
+                "images/섬놀이터 -풍선.jpg",
+                "images/섬놀이터-쉼터.jpg",
+                "images/섬놀이터-열기구-2.jpg"
             ]
         },
         {
@@ -387,22 +399,28 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 108,
             name: "안산피자집",
             description: "안산피자집 3D 모델링 프로젝트입니다.",
-            mainImage: "images/안산피자집_1.jpg",
+            mainImage: "images/안산피자집_1.png",
             completionPhotos: [
-                "images/안산피자집_1.jpg",
-                "images/안산피자집_2.jpg",
-                "images/안산피자집_3.jpg"
+                "images/안산피자집_1.png",
+                "images/안산피자집_2.png",
+                "images/안산피자집_3.png",
+                "images/안산피자집_4.png",
+                "images/안산피자집_5.png",
+                "images/안산피자집_6.png",
+                "images/안산피자집_7.png",
+                "images/안산피자집_8.png",
+                "images/안산피자집_9.png"
             ]
         },
         {
             id: 109,
             name: "위저드 클럽 보드카페",
             description: "위저드 클럽 보드카페 3D 모델링 프로젝트입니다.",
-            mainImage: "images/위저드_클럽_보드카페_1.png",
+            mainImage: "images/위저드 클럽 보드카페 (1).png",
             completionPhotos: [
-                "images/위저드_클럽_보드카페_1.png",
-                "images/위저드_클럽_보드카페_2.png",
-                "images/위저드_클럽_보드카페_3.png",
+                "images/위저드 클럽 보드카페 (1).png",
+                "images/위저드 클럽 보드카페 (2).png",
+                "images/위저드 클럽 보드카페 (3).png",
                 "images/위저드_클럽_보드카페_4.png",
                 "images/위저드_클럽_보드카페_5.png",
                 "images/위저드_클럽_보드카페_6.png",
@@ -426,11 +444,11 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 110,
             name: "청담 고깃집",
             description: "청담 고깃집 3D 모델링 프로젝트입니다.",
-            mainImage: "images/청담_고깃집_1.png",
+            mainImage: "images/청담 고깃집 (1).png",
             completionPhotos: [
-                "images/청담_고깃집_1.png",
-                "images/청담_고깃집_2.png",
-                "images/청담_고깃집_3.png",
+                "images/청담 고깃집 (1).png",
+                "images/청담 고깃집 (2).png",
+                "images/청담 고깃집 (3).png",
                 "images/청담_고깃집_4.png",
                 "images/청담_고깃집_5.png"
             ]
